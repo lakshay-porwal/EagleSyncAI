@@ -53,7 +53,17 @@ io.on("connection", (socket) => {
 
 // ─── Middleware ───────────────────────────────────────────────────────────
 app.use(cors({
-  origin: process.env.CLIENT_URL || "http://localhost:5173",
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true);
+    if (
+      origin.startsWith("http://localhost") ||
+      origin.endsWith(".vercel.app") ||
+      origin === process.env.CLIENT_URL
+    ) {
+      return callback(null, true);
+    }
+    return callback(new Error("Not allowed by CORS"));
+  },
   credentials: true,
 }));
 
