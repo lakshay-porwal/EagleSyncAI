@@ -4,6 +4,11 @@
 
 EagleSyncAI is a premium, state-of-the-art SaaS platform designed to streamline skill auditing, personalized roadmap creation, mock evaluations, placement matches, and automatic applications. Powered by **Google Gemini 3.5**, EagleSyncAI leverages a closed-loop multi-agent architecture to keep your career trajectory in sync.
 
+## 🌐 Live Deployments
+
+* **Frontend App**: [https://eagle-sync-ai.vercel.app](https://eagle-sync-ai.vercel.app)
+* **Backend API**: [https://eagle-sync-ai-qx1k.vercel.app](https://eagle-sync-ai-qx1k.vercel.app)
+
 ---
 
 ## 🤖 Core Feature Suite
