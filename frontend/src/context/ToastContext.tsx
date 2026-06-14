@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X, CheckCircle, AlertTriangle, Info } from "lucide-react";
 
-export type ToastType = "success" | "error" | "info";
+export type ToastType = "success" | "error" | "info" | "warning";
 
 interface Toast {
   id: string;
@@ -46,6 +46,9 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             >
               {t.type === "success" && (
                 <CheckCircle className="text-emerald-500 shrink-0 w-5 h-5 mt-0.5" />
+              )}
+              {t.type === "warning" && (
+                <AlertTriangle className="text-amber-500 shrink-0 w-5 h-5 mt-0.5" />
               )}
               {t.type === "error" && (
                 <AlertTriangle className="text-rose-500 shrink-0 w-5 h-5 mt-0.5" />
