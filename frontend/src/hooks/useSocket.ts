@@ -10,9 +10,14 @@ export const useSocket = (token: string | null) => {
   useEffect(() => {
     if (!token) return;
 
-    const socket = io(window.location.origin.includes("5173")
-      ? "http://localhost:5000"
-      : window.location.origin, {
+    const rawUrl = import.meta.env.VITE_API_URL || "";
+    const socketUrl = rawUrl
+      ? rawUrl.replace(/\/api\/?$/, "")
+      : (window.location.origin.includes("5173")
+        ? "http://localhost:5000"
+        : window.location.origin);
+
+    const socket = io(socketUrl, {
       auth: { token },
       transports: ["websocket", "polling"],
     });

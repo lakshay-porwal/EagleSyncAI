@@ -118,17 +118,21 @@ app.use((err, req, res, next) => {
 });
 
 // ─── Start ────────────────────────────────────────────────────────────────
-const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => {
-  console.log(`\n🚀 EagleSyncAI Server running on http://localhost:${PORT}`);
-  console.log(`🤖 AI Agents: Capability | Roadmap | Interview | Career | Progress`);
-  console.log(`🔌 Socket.io: Live agent feed enabled`);
-  console.log(`📦 MongoDB: Connecting...`);
-  console.log(`\n📋 API Endpoints:`);
-  console.log(`   POST /api/auth/register`);
-  console.log(`   POST /api/auth/login`);
-  console.log(`   GET  /api/auth/me`);
-  console.log(`   POST /api/agents/capability | roadmap | career | progress | chat`);
-  console.log(`   POST /api/interviews/submit`);
-  console.log(`   POST /api/opportunities/seed  (run once!)\n`);
-});
+if (!process.env.VERCEL) {
+  const PORT = process.env.PORT || 5000;
+  server.listen(PORT, () => {
+    console.log(`\n🚀 EagleSyncAI Server running on http://localhost:${PORT}`);
+    console.log(`🤖 AI Agents: Capability | Roadmap | Interview | Career | Progress`);
+    console.log(`🔌 Socket.io: Live agent feed enabled`);
+    console.log(`📦 MongoDB: Connecting...`);
+    console.log(`\n📋 API Endpoints:`);
+    console.log(`   POST /api/auth/register`);
+    console.log(`   POST /api/auth/login`);
+    console.log(`   GET  /api/auth/me`);
+    console.log(`   POST /api/agents/capability | roadmap | career | progress | chat`);
+    console.log(`   POST /api/interviews/submit`);
+    console.log(`   POST /api/opportunities/seed  (run once!)\n`);
+  });
+}
+
+module.exports = app;

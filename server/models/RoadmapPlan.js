@@ -33,6 +33,4 @@ const roadmapPlanSchema = new mongoose.Schema({
   lastUpdated: { type: Date, default: Date.now },
 });
 
-roadmapPlanSchema.index({ userId: 1 });
-
 module.exports = mongoose.model("RoadmapPlan", roadmapPlanSchema);

@@ -18,6 +18,4 @@ const chatHistorySchema = new mongoose.Schema({
   updatedAt: { type: Date, default: Date.now },
 });
 
-chatHistorySchema.index({ userId: 1 });
-
 module.exports = mongoose.model("ChatHistory", chatHistorySchema);

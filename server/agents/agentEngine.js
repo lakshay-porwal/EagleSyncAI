@@ -49,7 +49,7 @@ const callGeminiWithRetry = async (ai, contents, retries = 2) => {
   for (let i = 0; i <= retries; i++) {
     try {
       const response = await ai.models.generateContent({
-        model: "gemini-3.5-flash",
+        model: "gemini-1.5-flash",
         contents,
       });
       return response.text;

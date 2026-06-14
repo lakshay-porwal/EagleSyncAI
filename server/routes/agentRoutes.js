@@ -152,7 +152,7 @@ Keep responses focused and practical.`;
         });
 
         const response = await ai.models.generateContent({
-          model: "gemini-3.5-flash",
+          model: "gemini-1.5-flash",
           contents
         });
 
@@ -282,7 +282,7 @@ Ensure you incorporate the following metrics naturally in your briefing text:
 Keep the tone extremely engaging, like a helpful AI co-pilot, and recommend a clear next step.`;
 
         const response = await ai.models.generateContent({
-          model: "gemini-3.5-flash",
+          model: "gemini-1.5-flash",
           contents: [{ role: "user", parts: [{ text: systemPrompt }] }]
         });
         briefing = response.text;
