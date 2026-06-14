@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+server/node_modules/
+frontend/.tmp/
+
+# Production Build
+dist/
+frontend/dist/
+
+# Local Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+server/.env
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Agent Brain / Scratch / Plans
+.gemini/
+brain/
+*implementation_plan.md
+*walkthrough.md
+*task.md
